@@ -1,0 +1,170 @@
+body {
+    background-color: #191627;
+    color: #fff;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.centered {
+    text-align: center;
+}
+
+.navbar {
+    color: #fff;
+    height: 70px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    color: #6E57E0;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+}
+
+.navbar ul .btn {
+    padding: .4rem 3rem;
+    font-weight: bold;
+}
+
+
+.form__container {
+    margin: 4rem auto;
+}
+
+.form__container h1 {
+    padding: 2rem;
+}
+
+ form {
+    margin: auto;
+}
+
+.form__content{
+    margin: auto;
+    width: 500px;
+    background: #211d35;
+    border-radius: .8rem;
+    padding: .75rem 1rem .25rem;
+    margin-bottom: 1.2rem;
+}
+
+.input__label{
+    font-size: var(--smaller-font-size);
+    color: #fff;
+}
+
+
+.form__input{
+    width: 100%;
+    background: #211d35;
+    color: #fff;
+    font-family: var(--body-font);
+    font-size: var(--small-font-size);
+    border: none;
+    outline: none;
+    padding: .25rem .5rem .5rem 0;
+}
+
+.form__bottom {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.form__bottom a {
+    color: #6E57E0;
+    font-weight: bold;
+}
+
+.error {
+    color: #af4444;
+    font-size: 14.5px;
+    margin-top: 5px;
+  }
+
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 1rem;
+    color: #fff;
+    background-color: #6E57E0;
+    padding: .8rem 5rem;
+}
+
+.btn:hover {
+    background: transparent;
+    border: 1px solid #fff;
+}
+
+.submit__btn {
+    width: 500px;
+}
+
+.submit-btn {
+    margin: auto;
+    width: 500px;
+    border-radius: .8rem;
+    padding: .75rem 1rem .25rem;
+    margin-bottom: 1.2rem;
+}
+
+
+@media (max-width: 900px) {
+
+    .navbar .flex {
+        flex-direction: column;
+        margin: auto;
+        height: 110px;
+    }
+  
+    form,
+    .form__container {
+      width: auto;
+    }
+  
+    form .btn {
+        margin: auto;
+    }
+
+  }
+  
+  @media (max-width: 425px) {
+    form {
+      padding: 20px;
+    }
+  }
+  

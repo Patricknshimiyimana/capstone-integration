@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Create new post</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="left-container">
+                <h1 class="logo"><a href="../../index.html">Patrick nsh.</a></h1>
+                <nav>
+                <ul>
+                    <li><a href="../../index.html">Dashboard</a></li>
+                    <li><a href="messages.html">Messages</a></li>
+                    <li><a href="#">New post</a></li>
+                </ul>
+            </nav>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="right-container">
+               
+                    <h1 class="new-post--heading">Create a blog post</h1>
+
+                <form action="" id="new-post-form">
+                    <div class="contact__inputs grid">
+                     <div class="contact__content">
+                        <label for="image" class="contact__label">ImageUrl</label>
+                        <input type="text" class="contact__input upload__img" id="image-url" name="image" />
+                     </div>
+
+                     <div class="contact__content">
+                        <label for="title" class="contact__label">title</label>
+                        <input type="text" class="contact__input" id="title" name="title"/>
+                      </div>
+
+                    </div>
+
+                    <div class="contact__content">
+                      <label for="body" class="contact__label">Body</label>
+                      <textarea type="text" class="contact__input"  rows="5" id="body" name="body"></textarea>
+                    </div>
+                    
+                    <input type="submit" class="submit__btn" value="Publish Post" id="submitBtn" />
+                  </form>
+           
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/createPost.js"></script>
+</body>
+</html>

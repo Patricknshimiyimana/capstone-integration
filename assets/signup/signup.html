@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Create an account</title>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="container flex">
+        <h2 class="logo">Patrick nsh.</h2>
+        <nav>
+            <ul>
+                <li><a href="../Blog/index.html">Home</a></li>
+                <li><a href="../../index.html">Portfolio</a></li>
+                <li><a href="../login/login.html" class="btn">login</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="form__container">
+
+    <div class="title centered"><h1>Create an account</h1></div>
+    <form id="form" onsubmit="signUp()">
+
+      <div class="form__content">
+        <label for="name" class="input__label">Name:</label>
+        <input type="text" name="username" id="username" class="form__input"/>
+        <div class="error"></div>
+      </div>
+  
+      <div class="form__content">
+        <label for="email" class="input__label">Email:</label>
+        <input type="email" name="email" id="email" class="form__input"/>
+        <div class="error"></div>
+      </div>
+  
+      <div class="form__content">
+        <label for="password" class="input__label">Password:</label>
+        <input type="password" name="password" id="password" class="form__input" />
+        <div class="error"></div>
+      </div>
+  
+      <div class="submit-btn">
+        <button type="submit" id="submit" class="submit__btn btn">
+          <a href="#">Signup</a>
+        </button>
+      </div>
+    </form>
+
+    <div class="form__bottom">
+        <div>
+          <p>Already Have an Account?</p> 
+          <p> <a href="../login/login.html">login</a></p>
+        </div>
+      </div>
+  </div>
+
+  <!-- <script src="assets/js/validation.js"></script> -->
+  <script src="../js/authLocalStorage.js"></script>
+</body>
+</html>
