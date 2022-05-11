@@ -65,4 +65,30 @@ const displayPosts = () => {
 
 displayPosts();
 
+// login and logout btn if user is logged in or out
+const isLoggedIn = localStorage.getItem('userId');
+
+const loginBtn = document.getElementById('login-btn');
+const logoutBtn = document.getElementById('logout-btn');
+
+if (isLoggedIn) {
+  loginBtn.style.display = "none";
+}
+
+else logoutBtn.style.display = "none";
+
+logoutBtn.addEventListener('click', e => {
+  e.preventDefault();
+  logout();
+})
+
+const logout = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('userId');
+  localStorage.setItem('isLoggedIn', false);
+  location.reload();
+};
+
+
+
 

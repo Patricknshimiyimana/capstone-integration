@@ -40,8 +40,9 @@ const displayPosts = () => {
       
           </div>
           <div class="wrapper-flex">
-               <button class="btn btn-edit">Edit</button>
-               <button class="btn btn-delete" id="delete-btn">Delete</button>
+               <button class="btn btn-edit" id="update-btn" onclick="updatePost('${element._id}', '${element.title}', 
+               '${element.content}', '${element.imageUrl}')"><a href="./assets/html/new-post.html">Edit</a></button>
+               <button class="btn btn-delete" id="delete-btn" onclick="deletePost('${element._id}')">Delete</button>
             </div>
         </div>
         </div>
@@ -54,61 +55,60 @@ const displayPosts = () => {
       
       document.querySelector('.blog-card-group').appendChild(blogPost);
 
-      let deleteBtn = document.getElementById('delete-btn');
-      deleteBtn.addEventListener('click', e => {
-        console.log(element._id);
-        deletePost(element._id)
-      })
       });
     })
+
+    
 }
 
 displayPosts();
 
-const deletePost = id => {
-console.log(id)
+function deletePost(id) {
+  console.log(id)
 
-const token = localStorage.getItem("token");
-
-fetch(`https://mybrand-blog-api.herokuapp.com/feed/post/${id}`,
-  {
+  let token = localStorage.getItem('token');
+  
+  fetch(`https://mybrand-blog-api.herokuapp.com/feed/post/${id}`, {
     method: 'DELETE',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-  }
-  })
-.then(res => res.json)
-.then(result => console.log(result))
+    Authorization: `Bearer ${token}`
+        }
+})
+.then(res => res.json())
+.then(result => {
+    console.log(result);
+    location.reload();
+})
 .catch(err => console.log(err))
-location.reload();
+
 }
 
 
-// const updatePost = id => {
-//   console.log(id)
+// login and logout btn if user is logged in or out
+const isLoggedIn = localStorage.getItem('userId');
 
-//   const token = localStorage.getItem('token')
+const logoutBtn = document.getElementById('logout-btn');
 
-//   const title = document.getElementById("title").value;
-//   const body = document.getElementById("body").value;
-//   const image = document.getElementById("image-url").value;
+if (isLoggedIn) {
+   logoutBtn.addEventListener('click', e => {
+    console.log("hello..")
+    logout();
+  })
+} else location.href = "../../../assets/login/login.html";
 
-//   fetch(`https://mybrand-blog-api.herokuapp.com/feed/post/${id}`, {
-//     method: 'PUT',
-//     headers: {
-//         'Content-Type': 'application/json',
-//         Authorization: `Bearer ${token}`
-//     },
-//     body: JSON.stringify({   
-//         title: title,
-//         content: body,
-//         image: image
-//     }),
-//     referrer: 'no-referrer'
-// })
-// .then(res => res.json())
-// .then(result => console.log(result))
-// .catch(err => console.log(err));
-// };
+const logout = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('userId');
+  localStorage.setItem('isLoggedIn', false);
+  location.href = "../../../assets/login/login.html"
+};
+
+const updatePost = (id, title, content, imageurl) => {
+  console.log(id);
+
+  const post = {
+    id, title, content, imageurl
+  }
+  localStorage.setItem("postToUpdate", JSON.stringify(post));
+
+}

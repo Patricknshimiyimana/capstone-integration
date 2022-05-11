@@ -26,7 +26,7 @@ const displayMessages = () => {
             <div class="message-content">
                 <div class="flex">
                 <h2>${element.username}</h2>
-                <button class="btn btn-delete" id="delete-msg-btn">Delete</button>
+                <button class="btn btn-delete" id="delete-msg-btn" onclick="deleteMsg('${element._id}')">Delete</button>
                 </div>
                 <h4>${element.email}</h4>
                 <p>${element.message}</p>
@@ -38,14 +38,7 @@ const displayMessages = () => {
      messageCard.classList.add('message-card');
      messageCard.innerHTML = messageElement;
 
-     document.querySelector('.messages-container').appendChild(messageCard)
-
-     messageCard.addEventListener('click', e => {
-         console.log(element._id)
-         deleteMsg(element._id)
-     })
-
-    
+     document.querySelector('.messages-container').appendChild(messageCard)    
 
         });
     })
