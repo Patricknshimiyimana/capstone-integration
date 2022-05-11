@@ -1,2 +1,2 @@
-# my-portifolio-fn
-My portifolio wesbite UI using HTML, CSS, JS
+# capstone-integration
+Integration of my portifolio backend api and frontend
